@@ -1,11 +1,12 @@
 /**
  * Created by hanzo on 2017/5/26.
  */
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Hero } from './hero';
 @Component({
-  selector:'hero-detail',
-  template:`
-      <div *ngIf="hero">
+  selector: 'hero-detail',
+  template: `
+    <div *ngIf="hero">
       <h2>{{hero.name}} details!</h2>
       <div><label>id: </label>{{hero.id}}</div>
       <div>
@@ -13,8 +14,8 @@ import { Component } from '@angular/core';
         <input [(ngModel)]="hero.name" placeholder="name"/>
       </div>
     </div>
-  `,
+  `
 })
 export class HeroDetailComponent {
-  hero: Hero;
+  @Input() hero: Hero;
 }
